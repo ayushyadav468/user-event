@@ -1,0 +1,12 @@
+# Misc
+.DS_Store
+.app/DS_Store
+.vscode/
+
+# node modules
+node_modules/
+
+# environment file
+.env
+# http test request file
+request.rest

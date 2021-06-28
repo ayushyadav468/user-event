@@ -1,0 +1,36 @@
+{
+	"name": "user-event",
+	"version": "1.0.0",
+	"description": "This project uses NextJS, GraphQL, NodeJS(express) and MongoDB. Users can log in or register and create, join and attend events.",
+	"main": "server.js",
+	"scripts": {
+		"dev": "nodemon server.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ayushyadav468/user-event.git"
+	},
+	"keywords": [
+		"NextJS",
+		"GraphQL",
+		"NodeJS",
+		"Express",
+		"MongoDB"
+	],
+	"author": "Ayush Yadav",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ayushyadav468/user-event/issues"
+	},
+	"homepage": "https://github.com/ayushyadav468/user-event",
+	"dependencies": {
+		"express": "^4.17.1",
+		"express-graphql": "^0.12.0",
+		"graphql": "^15.5.1"
+	},
+	"devDependencies": {
+		"dotenv": "^10.0.0",
+		"nodemon": "^2.0.7"
+	}
+}
