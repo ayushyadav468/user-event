@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 const { graphqlHTTP } = require('express-graphql');
 const { buildSchema } = require('graphql');
 
@@ -7,8 +8,23 @@ dotenv.config();
 const PORT = process.env.PORT || 8000;
 const app = express();
 const events = [];
-app.use(express.json());
 
+// Connect to MongoDB atlas
+const connectDB = async () => {
+	try {
+		await mongoose.connect(process.env.DB_URL, {
+			useNewUrlParser: true,
+			useUnifiedTopology: true
+		});
+		console.log(`MongoDB connection sucessful`);
+	} catch (error) {
+		console.log(`MongoDB connection failed, with error ${error}`);
+		process.exit(1);
+	}
+};
+connectDB();
+
+app.use(express.json());
 app.use(
 	'/graphql',
 	graphqlHTTP({
